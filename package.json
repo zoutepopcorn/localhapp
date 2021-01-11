@@ -1,0 +1,16 @@
+{
+  "name": "@localhapp/download",
+  "version": "1.0.0",
+  "description": "download localh.app certs",
+  "main": "cli/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node cli/index.js"
+  },
+  "type": "module",
+  "author": "popcorn",
+  "license": "ISC",
+  "dependencies": {
+    "download": "^8.0.0"
+  }
+}
