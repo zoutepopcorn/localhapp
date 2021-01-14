@@ -3,3 +3,5 @@ test.*
 test
 package-lock.json
 node_modules
+*.tgz
+gui_dist

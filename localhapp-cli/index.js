@@ -1,6 +1,5 @@
 import prompts from 'prompts';
 import {downloadCerts} from '../download/index.js';
-
 console.clear();
 
 const PICK = {
@@ -14,7 +13,7 @@ const PICK = {
     initial: 0
 }
 
-const test = async () => {
+const start = async () => {
     const response = await prompts(PICK);
     if(response.value === "download") {
         const err = await downloadCerts();
@@ -24,4 +23,4 @@ const test = async () => {
     }
 }
 
-test();
+start();
