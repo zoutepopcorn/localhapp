@@ -16,11 +16,9 @@ const PICK = {
     initial: 0
 }
 
-const showCertInfo = () => {
-}
-
 const start = async () => {
     const response = await prompts(PICK);
+    console.log(getCertInfo());
     if (response.value === "download") {
         const err = await downloadCerts();
     }

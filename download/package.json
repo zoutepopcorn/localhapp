@@ -1,6 +1,6 @@
 {
-  "name": "@localhapp/download",
-  "version": "1.0.0",
+  "name": "@localhapp/downnload",
+  "version": "1.0.2",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -8,5 +8,10 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "download certs for localh.app"
+  "description": "download certs for localh.app",
+  "dependencies": {
+    "download": "^8.0.0",
+    "figures": "^3.2.0",
+    "kleur": "^4.1.4"
+  }
 }

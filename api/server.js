@@ -25,7 +25,7 @@ const setHosts = (hosts) => {
     return {failed}
 }
 const removeHosts = (hosts) => { // Array with string domain
-    console.log("--- REMOVE ", hosts);
+    console.log(" > REMOVE ", hosts);
     for (const host of hosts) {
         const out = HOSTS.delete(host);
         console.log(host, out);
@@ -36,7 +36,7 @@ const getHosts = () => {
     return Object.fromEntries(HOSTS);
 }
 
-const startLocalhappServer = () => {
+const startLocalhappServer = (disName = DIR) => {
     // console.log(showCertInfo());
     const proxy = new httpProxy.createProxyServer();
     proxy.on('error', (e) => {
@@ -44,8 +44,8 @@ const startLocalhappServer = () => {
     })
     // TODO:
     const httpsServer = https.createServer({
-        key: fs.readFileSync(path.join(DIR, 'privkey.pem')),
-        cert: fs.readFileSync(path.join(DIR, 'cert.pem'))
+        key: fs.readFileSync(path.join(disName, 'privkey.pem')),
+        cert: fs.readFileSync(path.join(disName, 'cert.pem'))
     }, (req, res) => {
         const HOST = HOSTS.get(req.headers.host);
         if (HOST) {
@@ -57,7 +57,7 @@ const startLocalhappServer = () => {
             res.end("");
         }
     }).listen(443);
-    httpsServer.on('upgrade', function (req, socket, head) {
+    httpsServer.on('upgrade', (req, socket, head) => {
         const HOST = HOSTS.get(req.headers.host);
         if (HOST) {
             proxy.ws(req, socket, head, {
