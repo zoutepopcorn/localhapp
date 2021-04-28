@@ -5,7 +5,7 @@ import os from 'os';
 import path from 'path';
 
 import {getHosts, removeHosts, setHosts, startLocalhappServer, setConfigHost} from "./server.js";
-const GUI = path.join(os.homedir(), '.localh.app', 'gui_dist');
+const GUI = path.join(path.resolve(), 'gui_dist');
 
 const configServer = Fastify();
 configServer.register(cors);
