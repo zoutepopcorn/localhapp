@@ -1,0 +1,16 @@
+{
+  "name": "localhapp-cli",
+  "version": "1.0.0",
+  "description": "cli to start localh.app download, api and gui",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cert-info": "^1.5.1"
+  }
+}

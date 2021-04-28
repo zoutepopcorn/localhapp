@@ -1,0 +1,17 @@
+{
+  "name": "@localhapp/cert-info",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.10.3",
+    "figures": "^3.2.0",
+    "kleur": "^4.1.3"
+  }
+}

@@ -1,6 +1,7 @@
 .idea
-test.*
+test*
 test
+test.*
 package-lock.json
 node_modules
 *.tgz

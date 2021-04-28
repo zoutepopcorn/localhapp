@@ -11,6 +11,7 @@
   "author": "popcorn",
   "license": "ISC",
   "dependencies": {
+    "cert-info": "^1.5.1",
     "download": "^8.0.0",
     "figures": "^3.2.0"
   }
