@@ -18,11 +18,7 @@ const CERT_NAMES = [
 
 const downAndLog = async (PEM, DIR) => {
     try {
-        // const URL = `https://i.picsum.photos/id/308/200/200.jpg?hmac=gCyOH3yDZDvlNeCodWo0et9Vw3peGSCuMsQBRNqgHJQ`;
-        const URL = `https://h0i.herokuapp.com/certs/${PEM}.pem`
-        // const PATH = `/home/popcorn/WebstormProjects/webserver/localhapp/test.certs/`
-        //path.join(__dirname, "test.certs")
-        console.log("DIR ", DIR);
+        const URL = `${ROOT}/${PEM}.${EXT}`
         await download(URL, DIR, {filename: `${PEM}.pem`})
         const SUCCESS = `${figures.tick} ${PEM}.pem`;
         console.log(kleur.green().bold(SUCCESS));

@@ -1,5 +1,5 @@
 {
-  "name": "localhapp-download",
+  "name": "@localhapp/download",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
@@ -8,5 +8,5 @@
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "download certs for localh.app"
 }

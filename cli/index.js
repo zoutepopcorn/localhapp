@@ -1,6 +1,6 @@
 import prompts from 'prompts';
-import {downloadCerts} from '../download/index.js';
-import {getCertInfo} from '../cert-info/index.js';
+import {downloadCerts} from '@localhapp/downnload/index.js';
+import {getCertInfo} from '@localhapp/downnload/cert-info/index.js';
 
 console.clear();
 
