@@ -1,5 +1,5 @@
 {
-  "name": "localhapp-cli",
+  "name": "@localhapp/cli",
   "version": "1.0.0",
   "description": "cli to start localh.app download, api and gui",
   "main": "index.js",

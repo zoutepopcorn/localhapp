@@ -3,7 +3,6 @@ import {downloadCerts} from '@localhapp/downnload/index.js';
 import {getCertInfo} from '@localhapp/downnload/cert-info/index.js';
 
 console.clear();
-
 console.log(getCertInfo());
 
 const PICK = {
@@ -18,9 +17,7 @@ const PICK = {
 }
 
 const showCertInfo = () => {
-
 }
-
 
 const start = async () => {
     const response = await prompts(PICK);
@@ -31,6 +28,5 @@ const start = async () => {
         console.log("todo");
     }
 }
-
 
 start();
