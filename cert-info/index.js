@@ -8,15 +8,18 @@ import kleur from 'kleur';
 
 const DIR = path.join(os.homedir(), '.localh.app');
 
-const getCertInfo = (certDir = DIR) => {
-    let CERT;
-    try {
-        CERT = fs.readFileSync(path.join(certDir, 'cert.pem')).toString();
+let CERT;
+try {
+    CERT = fs.readFileSync(path.join(DIR, 'cert.pem')).toString();
+} catch (e) {
+}
+
+const getCertInfo = () => {
+    if(CERT) {
         const certJson = certInfo.info(CERT);
         const days = dayjs(certJson._expiresAt).diff(dayjs(), 'days');
         return `${kleur.green(figures.tick)} Current certificate is valid for the next ${kleur.green().bold(days)} days`;
-    } catch (e) {
-        console.log(e);
+    } else {
         return `${kleur.red(figures.cross)} Oops: ${kleur.red("No")} certificate, or ${kleur.red("invalid cert")} found`;
     }
 }

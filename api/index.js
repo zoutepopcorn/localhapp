@@ -5,16 +5,13 @@ import os from 'os';
 import path from 'path';
 
 import {getHosts, removeHosts, setHosts, startLocalhappServer, setConfigHost} from "./server.js";
-const GUI = path.join(path.resolve(), "./dist_gui");     // path.join(os.homedir(), '.localh.app', 'gui_dist');
-
-console.log("GUI ", GUI);
+const GUI = path.join(os.homedir(), '.localh.app', 'gui_dist');
 
 const configServer = Fastify();
 configServer.register(cors);
 
 const setGuiServer = (guiPath = GUI) => {
     // TODO: if guiPath not found...
-
     configServer.register(fastifyStatic, {
         root: guiPath
     });
@@ -22,7 +19,7 @@ const setGuiServer = (guiPath = GUI) => {
 }
 const setApiServer = () => {
     configServer.get('/api', async (request, reply) => {
-        console.log(" > GET ", getHosts());
+        console.log(" --- GET ", getHosts());
         reply.send(getHosts());
     })
     configServer.post('/api', async (request, reply) => {
@@ -41,7 +38,7 @@ const setApiServer = () => {
 
 const startServer = (PORT = 8041) => {
     configServer.listen(PORT).then(() => {
-        console.log(`started configserver http://localhost:${PORT}`);
+        console.log("started configserver");
     });
     startLocalhappServer();
 }
