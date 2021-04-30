@@ -1,16 +1,22 @@
 {
   "name": "@localhapp/cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "cli to start localh.app download, api and gui",
   "main": "index.js",
+  "bin": {
+    "localh-cli": "./index.js"
+  },
   "type": "module",
   "scripts": {
     "start": "node index.js",
+    "pub": "npm init --scope=@localhapp & npm publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@localhapp/cert-info": "^1.0.0",
+    "@localhapp/downnload": "^1.0.2",
     "cert-info": "^1.5.1"
   }
 }
