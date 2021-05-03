@@ -46,7 +46,9 @@ const downloadCerts = async (dirName = DIR) => {
         toDownload.push(downAndLog(PEM, dirName));
     }
     const output = await Promise.allSettled(toDownload);
-    return hasError(output);
+    if(hasError(output)) {
+        throw Error("one ore more donwloads failed");
+    }
 }
 
 export {

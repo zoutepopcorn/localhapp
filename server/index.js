@@ -1,12 +1,15 @@
 import Fastify from 'fastify';
-import fastifyStatic from 'fastify-static'
+import fastifyStatic from 'fastify-static';
 import cors from "fastify-cors";
 import os from 'os';
 import path from 'path';
-
+import {startDns} from './dns.js';
 import {getHosts, removeHosts, setHosts, startLocalhappServer, setConfigHost} from "./server.js";
-const GUI = path.join(path.resolve(), 'dist_gui');
+import internalIp from "internal-ip";
 
+
+let localIp = "";
+const GUI = path.join(path.resolve(), 'dist_gui');
 const configServer = Fastify();
 configServer.register(cors);
 
@@ -33,12 +36,18 @@ const setApiServer = () => {
         const response = removeHosts(request.body);
         reply.send({response, hosts: getHosts()});
     })
-    // TODO: listen on localhost only or available on the network
+
+
+    configServer.get('/ip', async (request, reply) => {
+        reply.send(localIp);
+    });
+        // TODO: listen on localhost only or available on the network
 }
 
 const startServer = (PORT = 8041) => {
-    configServer.listen(PORT).then(() => {
-        console.log("started configserver");
+    configServer.listen(PORT).then(async () => {
+        localIp = await internalIp.v4();
+        console.log("started configserver on: ", localIp);
     });
     startLocalhappServer();
 }
@@ -46,5 +55,6 @@ const startServer = (PORT = 8041) => {
 export {
     setApiServer,
     setGuiServer,
-    startServer
+    startServer,
+    startDns
 }

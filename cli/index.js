@@ -51,8 +51,12 @@ const start = async () => {
 
     const response = await prompts(PICK);
     if (response.value.startsWith('/')) {
-        const err = await downloadCerts(response.value);
-        console.log(getCertInfo());
+        try {
+            await downloadCerts(response.value);
+            console.log(getCertInfo());
+        } catch (e) {
+            console.log(e);
+        }
     }
     if (response.value === "custom") {
         customFolder();
@@ -63,5 +67,4 @@ const start = async () => {
 }
 
 start().then(() => {
-
 })

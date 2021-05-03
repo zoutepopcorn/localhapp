@@ -1,6 +1,6 @@
 {
   "name": "@localhapp/cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "cli to start localh.app download, api and gui",
   "main": "index.js",
   "bin": {
@@ -16,7 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@localhapp/cert-info": "^1.0.0",
-    "@localhapp/downnload": "^1.0.2",
+    "@localhapp/downnload": "^1.0.4",
     "cert-info": "^1.5.1"
   }
 }

@@ -5,15 +5,18 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "node test.api.js"
+    "test": "node test.api.js",
+    "start": "node start.js"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
+    "dns2": "^2.0.0",
     "fastify": "^3.9.2",
     "fastify-cors": "^5.1.0",
     "fastify-static": "^3.3.1",
     "http-proxy": "^1.18.1",
+    "internal-ip": "^6.2.0",
     "is-valid-domain": "^0.0.17"
   }
 }
