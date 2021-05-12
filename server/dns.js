@@ -21,9 +21,7 @@ const startDns = (localIp) => {
             console.log(e);
         }
     });
-    server.on('request', (request, response, rinfo) => {
-        console.log(request.header.id, request.questions[0]);
-    });
+    server.on('request', (request, response, rinfo) => {/* console.log(request.header.id, request.questions[0]);*/});
     server.listen(53);
 }
 

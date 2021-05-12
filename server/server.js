@@ -12,7 +12,6 @@ const setConfigHost = (host, options) => {
     HOSTS.set(host, options);
 }
 const setHosts = (hosts) => {
-    console.log("set hosts");
     const failed = [];
     for (let [host, options] of Object.entries(hosts)) {
         host = host.toLowerCase();
@@ -25,19 +24,16 @@ const setHosts = (hosts) => {
     return {failed}
 }
 const removeHosts = (hosts) => { // Array with string domain
-    console.log("--- REMOVE ", hosts);
     for (const host of hosts) {
         const out = HOSTS.delete(host);
         console.log(host, out);
     }
-    console.log(hosts);
 }
 const getHosts = () => {
     return Object.fromEntries(HOSTS);
 }
 
 const startLocalhappServer = () => {
-    // console.log(showCertInfo());
     const proxy = new httpProxy.createProxyServer();
     proxy.on('error', (e) => {
         console.log(e);

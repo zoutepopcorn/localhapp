@@ -28,7 +28,6 @@ const CUSTOM = {
     message: `Custom path`
 }
 
-
 const customFolder = async () => {
     const customResponse = await prompts(CUSTOM);
     try {

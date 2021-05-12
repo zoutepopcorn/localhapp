@@ -8,9 +8,14 @@ import {startDns} from './dns.js';
 import {getHosts, removeHosts, setHosts, startLocalhappServer, setConfigHost} from "./server.js";
 import internalIp from "internal-ip";
 
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 console.log(getCertInfo());
 
-const GUI = path.join(path.resolve(), 'dist_gui');
+const GUI = path.join(__dirname, 'dist_gui');
 const configServer = Fastify();
 configServer.register(cors);
 
@@ -23,17 +28,13 @@ const setGuiServer = (guiPath = GUI) => {
 }
 const setApiServer = () => {
     configServer.get('/api', async (request, reply) => {
-        console.log(" --- GET ", getHosts());
         reply.send(getHosts());
     });
     configServer.post('/api', async (request, reply) => {
-        console.log("post");
         const response = setHosts(request.body);
-        console.log("end");
         reply.send({response, hosts: getHosts()});
     });
     configServer.delete('/api', async (request, reply) => {
-        console.log("|> |>    |> DELETE");
         const response = removeHosts(request.body);
         reply.send({response, hosts: getHosts()});
     });
@@ -43,10 +44,7 @@ const setApiServer = () => {
     configServer.get('/api/certificate', async (request, reply) => {
         reply.send(getCertJson());
     });
-
-
-
-    // TODO: listen on localhost only or available on the network
+    // TODO: listen on localhost only or available on the network ?
 }
 const getLocalIp = async () => {
     return await internalIp.v4();
