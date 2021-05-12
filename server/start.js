@@ -1,6 +1,9 @@
-import {setApiServer, setGuiServer, startDns, startServer} from './index.js';
+import {setApiServer, setGuiServer, startDns, startServer, getLocalIp} from './index.js';
 
-setGuiServer();
-setApiServer();
-startServer();
-startDns();
+getLocalIp().then((localIp) => {
+    console.log('localIp ', localIp);
+    setGuiServer();
+    setApiServer();
+    startServer();
+    startDns(localIp);
+})
