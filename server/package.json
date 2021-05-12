@@ -1,12 +1,12 @@
 {
-  "name": "@localhapp/api",
+  "name": "@localhapp/server",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "node test.api.js",
-    "start": "node start.js"
+    "start": "node start.js",
+    "pub": "npm init --scope=@localhapp && npm publish --access public"
   },
   "author": "",
   "license": "MIT",
@@ -19,5 +19,7 @@
     "http-proxy": "^1.18.1",
     "internal-ip": "^6.2.0",
     "is-valid-domain": "^0.0.17"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
