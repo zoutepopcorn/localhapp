@@ -1,6 +1,6 @@
 {
   "name": "@localhapp/server",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "index.js",
   "type": "module",
   "bin": {
@@ -25,5 +25,13 @@
     "is-valid-domain": "^0.0.17"
   },
   "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoutepopcorn/localhapp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zoutepopcorn/localhapp/issues"
+  },
+  "homepage": "https://github.com/zoutepopcorn/localhapp#readme",
   "description": ""
 }

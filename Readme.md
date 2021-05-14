@@ -1,17 +1,17 @@
 # What is this
 This is a simple nodejs server. It can proxy your local traffic with a valid certificate from the localh.app or *.localh.app.
-localh.app, localh.app and *.localh.app point to 127.0.0.1.
+The dns from the domain is pointing to 127.0.0.1.
 
-There is also an experimental nameserver, so you can connect from a mobile phone.
+There is also an experimental nameserver, so you can connect from a mobile phone. It will change the dns from *.localh.app to the ip of the host.
 
 There is also a cli, if you only want to download the certificate.
 
 # Server / Gui
 
-### Install
-```npm i @localhapp/server```
+#### Install
+```npm i -g @localhapp/server```
 
-## Run
+#### Run
 ```localhapp```
 
 A webpage where you can proxy *.localh.app to your localhost or other adresses.
@@ -24,11 +24,11 @@ See: https://gist.github.com/firstdoit/6389682
 
 # Cli only
 
-### Install 
+#### Install 
 You can dowload / update your certs with the command line
-```npm i @localhapp/cli```
+```npm i -g @localhapp/cli```
 
-### Run
+#### Run
 ```localh-cli```
 
 ![](docs/install_cli.gif)
