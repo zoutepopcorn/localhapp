@@ -40,7 +40,7 @@ const hasError = (output) => {
 }
 
 const downloadCerts = async (dirName = DIR) => {
-    console.log("download CERTS in: ", dirName);
+    console.log("downloading certificate in: ", dirName);
     const toDownload = [];
     for (const PEM of CERT_NAMES) {
         toDownload.push(downAndLog(PEM, dirName));

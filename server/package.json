@@ -1,6 +1,6 @@
 {
   "name": "@localhapp/server",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "index.js",
   "type": "module",
   "bin": {
@@ -14,7 +14,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@localhapp/cert-info": "^1.0.3",
+    "@localhapp/cert-info": "^1.0.6",
+    "@localhapp/downnload": "^1.0.4",
     "cert-info": "^1.5.1",
     "dns2": "^2.0.0",
     "fastify": "^3.15.1",

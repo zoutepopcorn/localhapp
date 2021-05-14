@@ -32,7 +32,6 @@ const removeHosts = (hosts) => { // Array with string domain
 const getHosts = () => {
     return Object.fromEntries(HOSTS);
 }
-
 const startLocalhappServer = () => {
     const proxy = new httpProxy.createProxyServer();
     proxy.on('error', (e) => {
@@ -53,6 +52,7 @@ const startLocalhappServer = () => {
             res.end("");
         }
     }).listen(443);
+    console.log("started configserver https://config.localh.app");
     httpsServer.on('upgrade', function (req, socket, head) {
         const HOST = HOSTS.get(req.headers.host);
         if (HOST) {
@@ -64,6 +64,8 @@ const startLocalhappServer = () => {
         }
 
     });
+
+
 }
 
 export {
