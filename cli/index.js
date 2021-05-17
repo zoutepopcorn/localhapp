@@ -21,7 +21,6 @@ const PICK = {
     ],
     initial: 0
 }
-
 const CUSTOM = {
     type: 'text',
     name: 'value',

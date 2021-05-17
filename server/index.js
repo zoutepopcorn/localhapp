@@ -51,7 +51,8 @@ const getLocalIp = async () => {
 const startServer = async (PORT = 8041) => {
     const CERT_INFO = getCertJson();
     console.log(CERT_INFO.cliText);
-    if(!CERT_INFO.hasCert || CERT_INFO.days < 45) {
+    console.log(CERT_INFO.days);
+    if(!CERT_INFO.hasCert || CERT_INFO.days < 90 - 14) {
         await downloadCerts();
         refreshCertInfo();
         console.log(getCertJson().cliText);
