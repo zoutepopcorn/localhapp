@@ -16,3 +16,41 @@
     "kleur": "^4.1.3"
   }
 }
+"name": "@localhapp/downnload",
+  "version": "1.0.4",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pub": "npm init --scope=@localhapp && npm publish --access public"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "download certs for localh.app",
+  "dependencies": {
+    "download": "^8.0.0",
+    "figures": "^3.2.0",
+    "kleur": "^4.1.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoutepopcorn/localhapp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zoutepopcorn/localhapp/issues"
+  },
+  "homepage": "https://github.com/zoutepopcorn/localhapp#readme"
+}
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
