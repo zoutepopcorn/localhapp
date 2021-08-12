@@ -1,3 +1,7 @@
+## Oops
+I messed with some rate limits from let's encrypt.
+Lost the recent certs. So it can be offline for a while :(.
+
 # What is this
 
 This is a simple nodejs server. It can proxy your local traffic with a valid certificate from the localh.app or *
@@ -25,6 +29,7 @@ A webpage where you can proxy *.localh.app to your localhost or other adresses. 
 Please make sure that node is able to open port 80, 443 and 53. See: https://gist.github.com/firstdoit/6389682
 
 # Cli only
+
 
 #### Install
 

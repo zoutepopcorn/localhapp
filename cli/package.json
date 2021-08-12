@@ -17,6 +17,7 @@
   "dependencies": {
     "@localhapp/cert-info": "^1.0.0",
     "@localhapp/downnload": "^1.0.4",
-    "cert-info": "^1.5.1"
+    "cert-info": "^1.5.1",
+    "prompts": "^2.4.1"
   }
 }
